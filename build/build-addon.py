@@ -2,7 +2,7 @@ from pathlib import Path
 import ast
 import zipfile
 from zipfile import ZipFile
-from typing import Callable
+from typing import Callable, Tuple
 from functools import partial
 
 
@@ -32,7 +32,7 @@ class AddonBuilder:
                 return line.partition('refs/heads/')[2]
         return 'extern'
 
-    def _get_addon_version(self) -> tuple[int, int, int]:
+    def _get_addon_version(self) -> Tuple[int, int, int]:
         with self._get_addon_init_file().open('r') as f:
             source_code = ast.parse(f.read())
         return next(ast.literal_eval(n.value) for n in source_code.body if isinstance(n, ast.Assign) and n.targets[0].id == 'bl_info')['version']
