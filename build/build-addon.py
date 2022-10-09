@@ -53,7 +53,7 @@ class AddonBuilder:
     def to_relative(self, path: Path) -> Path:
         return path.relative_to(self.repo_dir)
 
-    def pack_file(self, path: Path, zip_file: ZipFile, new_name: str = '', new_content: str = None):
+    def pack_file(self, path: Path, zip_file: ZipFile, new_name: str = '', new_content: str = None) -> None:
         relpath = self.to_relative(path)
         if not new_name == '':
             relpath = relpath.parent.joinpath(f'{new_name}{relpath.suffix}')
@@ -68,7 +68,7 @@ class AddonBuilder:
     def packing_finish(self, zip_file: ZipFile) -> None:
         pass
 
-    def build(self):
+    def build(self) -> None:
         with ZipFile(self.get_target_file(), 'w', zipfile.ZIP_DEFLATED) as zf:
 
             self.packing_init(zf)
