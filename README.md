@@ -1,6 +1,6 @@
 # BPY Tools
 
-A CLI tool to help with Blender Python development.
+Some CLI and code tools to help with Blender Python development.
 Includes opinionated tools and simple utilities to reduce code boilerplate and improve the development experience.
 
 # Installation
