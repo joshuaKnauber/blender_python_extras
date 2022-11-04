@@ -40,11 +40,11 @@ python build_tools build
 
 <details>
     <summary>Details</summary>
-  
-    This CLI command will build your addon into a zip file.
-    It will remove \_\_pycache\_\_ as well as .git folders. It will also clean up unnecessary files from the bpy_tools folder that are only needed during development to reduce your build size.
+    
+This CLI command will build your addon into a zip file.
+It will remove \_\_pycache\_\_ as well as .git folders. It will also clean up unnecessary files from the bpy_tools folder that are only needed during development to reduce your build size.
 
-    You can run the command with the `--dirname` flag to provide the name of the folder to build to. If you don't provide a name it will ask you for one the first time you run the command. The tool will include this build folder in your .gitignore file if you have one.
+You can run the command with the `--dirname` flag to provide the name of the folder to build to. If you don't provide a name it will ask you for one the first time you run the command. The tool will include this build folder in your .gitignore file if you have one.
 
 </details>
 
