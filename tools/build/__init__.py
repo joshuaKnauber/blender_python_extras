@@ -17,6 +17,10 @@ def build(dirname):
 
 def get_dirname(dirname):
     """ Gets the dirname from the build config or asks the user """
+    if not os.path.exists(os.path.join(os.path.dirname(__file__), "build.config.json")):
+        with open(os.path.join(os.path.dirname(__file__), "build.config.json"), "w") as f:
+            json.dump({"dirname": ""}, f, indent=4)
+
     config = {}
     with open(os.path.join(os.path.dirname(__file__), "build.config.json"), "r") as f:
         config = json.load(f)
